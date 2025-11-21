@@ -1,6 +1,10 @@
 ---
 extends: default
 
+# Ignore template files since they contain Go template syntax
+ignore: |
+  templates/
+
 rules:
   line-length:
     max: 120
