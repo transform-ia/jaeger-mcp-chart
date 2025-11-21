@@ -1,0 +1,70 @@
+---
+# Default values for jaeger-mcp-chart
+
+replicaCount: 1
+
+image:
+  repository: transform-ia/jaeger-mcp
+  pullPolicy: IfNotPresent
+  tag: ""  # Overrides the image tag whose default is the chart appVersion
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 81
+  targetPort: 8000
+
+# Jaeger connection configuration
+jaeger:
+  url: "http://jaeger-query.claude-tools.svc.cluster.local"
+  port: "80"
+  protocol: "HTTP"
+
+# Environment variables
+env:
+  logLevel: "info"
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+# Security context for the pod
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+# Network policies
+networkPolicies:
+  enabled: true
+  # Allow ingress from claude namespace
+  allowIngressFrom:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: claude
+      podSelector:
+        matchLabels:
+          app: claude-code
+  # Allow egress to jaeger-query service
+  allowEgressTo:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: claude-tools
+  # Allow egress to kube-dns
+  allowEgressToDNS:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: kube-system
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns

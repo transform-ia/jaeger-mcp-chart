@@ -1,0 +1,23 @@
+---
+apiVersion: v2
+name: jaeger-mcp-chart
+description: Helm chart for deploying jaeger-mcp server to Kubernetes
+type: application
+version: 0.0.1
+appVersion: "v0.0.3"
+
+keywords:
+  - jaeger
+  - mcp-server
+  - observability
+  - tracing
+  - distributed-tracing
+
+maintainers:
+  - name: Transform IA
+    email: bruno.clermont@gmail.com
+
+sources:
+  - https://github.com/transform-ia/jaeger-mcp-chart
+
+home: https://github.com/transform-ia/jaeger-mcp-chart

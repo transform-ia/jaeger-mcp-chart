@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "jaeger-mcp-chart.fullname" . }}
+  labels:
+    {{- include "jaeger-mcp-chart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: mcp
+      port: {{ .Values.service.port }}
+      targetPort: mcp
+      protocol: TCP
+  selector:
+    {{- include "jaeger-mcp-chart.selectorLabels" . | nindent 4 }}
