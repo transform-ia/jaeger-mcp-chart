@@ -1,10 +1,12 @@
 # Jaeger MCP Chart
 
-Helm chart for deploying jaeger-mcp server to Kubernetes. Provides MCP (Model Context Protocol) access to Jaeger distributed tracing data.
+Helm chart for deploying jaeger-mcp server to Kubernetes. Provides MCP (Model Context
+Protocol) access to Jaeger distributed tracing data.
 
 ## Overview
 
-This chart deploys the jaeger-mcp server which exposes Jaeger tracing data through the MCP protocol, enabling AI assistants and other tools to query and analyze distributed traces.
+This chart deploys the jaeger-mcp server which exposes Jaeger tracing data through the
+MCP protocol, enabling AI assistants and other tools to query and analyze distributed traces.
 
 **Key Features:**
 
@@ -338,17 +340,17 @@ MIT
 
 ## Maintainers
 
-- Transform IA (bruno.clermont@gmail.com)
+- Transform IA (<bruno.clermont@gmail.com>)
 
 ## Related Projects
 
-- **Jaeger MCP Server**: https://github.com/transform-ia/jaeger-mcp-server
-- **Jaeger**: https://www.jaegertracing.io/
-- **Model Context Protocol**: https://modelcontextprotocol.io/
+- **Jaeger MCP Server**: <https://github.com/transform-ia/jaeger-mcp-server>
+- **Jaeger**: <https://www.jaegertracing.io/>
+- **Model Context Protocol**: <https://modelcontextprotocol.io/>
 
 ## Support
 
 For issues and questions:
 
-- GitHub Issues: https://github.com/transform-ia/jaeger-mcp-chart/issues
-- Jaeger Documentation: https://www.jaegertracing.io/docs/
+- GitHub Issues: <https://github.com/transform-ia/jaeger-mcp-chart/issues>
+- Jaeger Documentation: <https://www.jaegertracing.io/docs/>

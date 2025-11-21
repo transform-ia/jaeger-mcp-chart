@@ -4,7 +4,8 @@ This file provides guidance to Claude Code when working with the jaeger-mcp-char
 
 ## Overview
 
-This Helm chart deploys the jaeger-mcp server to Kubernetes, providing MCP (Model Context Protocol) access to Jaeger distributed tracing data. The chart includes:
+This Helm chart deploys the jaeger-mcp server to Kubernetes, providing MCP (Model Context
+Protocol) access to Jaeger distributed tracing data. The chart includes:
 
 - Deployment with security-hardened container
 - ClusterIP Service for MCP endpoint
@@ -194,6 +195,6 @@ When modifying the chart:
 
 ## Further Reading
 
-- **Helm Documentation**: https://helm.sh/docs/
+- **Helm Documentation**: <https://helm.sh/docs/>
 - **k8s-manager Agent**: `/workspace/.claude/agents/k8s-manager.md`
 - **ArgoCD Documentation**: `/workspace/deployments/argocd/README.md`
