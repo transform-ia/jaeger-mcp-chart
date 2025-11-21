@@ -36,7 +36,7 @@ spec:
         {{- toYaml .Values.networkPolicies.allowEgressTo | nindent 8 }}
       ports:
         - protocol: TCP
-          port: 80
+          port: {{ .Values.jaeger.port }}
     - to:
         {{- toYaml .Values.networkPolicies.allowEgressToDNS | nindent 8 }}
       ports:
