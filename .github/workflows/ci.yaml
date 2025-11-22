@@ -28,7 +28,7 @@ jobs:
           strict: true
 
       - name: Lint Markdown files
-        uses: DavidAnson/markdownlint-cli2-action@v18
+        uses: DavidAnson/markdownlint-cli2-action@v21
         with:
           globs: '**/*.md'
 
